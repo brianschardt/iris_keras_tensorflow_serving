@@ -37,9 +37,11 @@ model = Sequential()
 model.add(Dense(8, input_dim=4, activation="relu"))
 model.add(Dense(3, activation="softmax"))
 
+#This is the part that had no documentation or example for keras on how to save the model using keras in the proper format for tensorflow serving
 serialized_tf_example = tf.placeholder(tf.string, name='tf_example')
 feature_configs = {'x': tf.FixedLenFeature(shape=[4], dtype=tf.float32),}
 tf_example = tf.parse_example(serialized_tf_example, feature_configs)
+#end
 
 x = tf.identity(tf_example['x'], name='x')  # use tf.identity() to assign name
 y = model(x)

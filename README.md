@@ -1,19 +1,16 @@
 # Train and Save Model on Iris data set using Keras
 ### Exported Model configured for Tensorflow Serving
 
-There is no real example of a simple model that was trained using 
-keras and then exported to in a format specifically for 
-Tensorflow Serving. So for the sake of clarity I wanted to use the simplest 
-example I could think of, which is the XOR logic gate. https://en.wikipedia.org/wiki/XOR_gate
-
-
+There is a lack of simple documentation on to train a model for classification 
+and save it using keras for Tensorflow Serving. Hopefully this example will lighten the way to productionize 
+AI.
 
 
 ### Getting Environment Set Up
 Clone Repo
 ```angular2html
-git clone https://github.com/brianalois/xor_keras_tensorflow_serving.git
-cd xor_keras_tensorflow_serving
+git clone git clone https://github.com/brianalois/iris_keras_tensorflow_serving.git
+cd iris_keras_tensorflow_serving
 ```
 
 ### PIPENV
@@ -45,7 +42,7 @@ If you do not want to use **pipenv** then you must install these dependencies
 You must have tensorflow keras, and numpy installed(obviously)
 ```angular2html
 pip install numpy
-pip install tensorflow keras
+pip install tensorflow keras pandas sklearn
 ```
 run the file to export the trained model
 ```angular2html
@@ -53,7 +50,7 @@ python index.py
 ```
 #### Variables
 
-There are 2 variables starting at line 15
+There are 2 variables starting at line 18
 
 **model_version**: change this to change the 
 name of the folder of the specific model version
